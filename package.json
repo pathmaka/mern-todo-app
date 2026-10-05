@@ -1,0 +1,10 @@
+{
+  "name": "mern-todo-app",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build -w frontend"
+  }
+}
