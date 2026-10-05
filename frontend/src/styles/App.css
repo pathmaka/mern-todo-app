@@ -1,0 +1,39 @@
+main { max-width: 640px; margin: 2rem auto; padding: 0 1rem; text-align: left; }
+h1 { margin-bottom: 1rem; }
+ul { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.75rem; }
+
+.todo-form { display: grid; gap: 0.5rem; }
+input:not([type='checkbox']), textarea {
+  font: inherit; padding: 0.5rem 0.75rem; border: 1px solid #8884; border-radius: 6px;
+  background: transparent; color: inherit; resize: vertical;
+}
+button {
+  font: inherit; padding: 0.4rem 0.9rem; border: 0; border-radius: 6px; cursor: pointer;
+  background: #4f46e5; color: #fff; transition: opacity 0.15s;
+}
+button:hover:not(:disabled) { opacity: 0.85; }
+button:disabled { opacity: 0.5; cursor: default; }
+button.secondary { background: #8883; color: inherit; }
+button.danger { background: #dc2626; }
+.actions { display: flex; gap: 0.5rem; }
+
+.todo {
+  display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem;
+  border: 1px solid #8884; border-radius: 8px; animation: fade-in 0.2s ease-out;
+  transition: opacity 0.2s;
+}
+.todo .content { flex: 1; min-width: 0; }
+.todo .title { font-weight: 600; overflow-wrap: anywhere; }
+.todo .description { margin: 0.25rem 0 0; opacity: 0.75; overflow-wrap: anywhere; }
+.todo input[type='checkbox'] { margin-top: 0.3rem; width: 1.1rem; height: 1.1rem; }
+.todo.done { opacity: 0.55; }
+.todo.done .title { text-decoration: line-through; }
+.todo > .todo-form { flex: 1; }
+
+.confirm { display: flex; align-items: center; gap: 0.5rem; animation: fade-in 0.2s ease-out; }
+
+.error { color: #dc2626; margin: 0; }
+.banner { padding: 0.5rem 0.75rem; border: 1px solid #dc2626; border-radius: 6px; margin-top: 1rem; }
+.muted { opacity: 0.6; margin-top: 1.5rem; }
+
+@keyframes fade-in { from { opacity: 0; transform: translateY(-4px); } }
